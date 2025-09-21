@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karan Veer Singh | Links</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* UPDATED: removed bitmap background, added gradient + overlay */
+    body {
+      font-family: Arial, sans-serif;
+
+      /* Base gradient fallback (no image) */
+      background: linear-gradient(180deg, #0b2f4e 0%, #0f456b 35%, #1a6fa1 100%); /* deep to light blues */
+      /* If you want to keep a note, use CSS comments: */
+      /* background: #1e3c72; */
+
+      color: white;
+      text-align: center;
+      padding: 20px 20px 0;   /* changed from 20px */
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+
+      /* Ensure the overlay sits behind content cleanly */
+      position: relative;
+      isolation: isolate;
+    }
+
+    /* NEW: blurred photo overlay using bg.jpg */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: -20vmax; /* extend beyond edges so blur doesn’t clip */
+      background-image: url("bg.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      filter: blur(14px) saturate(110%);  /* softens and enriches color */
+      transform: scale(1.05);             /* hides blur edge */
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .profile-pic {
+      margin-top: 40px;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid white;
+      object-fit: cover;
+    }
+
+    h1 {
+      margin-top: 15px;
+      font-size: 1.6rem;
+    }
+    p {
+      margin-top: 8px;
+      font-size: 0.95rem;
+      font-style: italic;
+      opacity: 0.9;
+    }
+
+    .socials {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    .socials a img {
+      width: 30px;
+      height: 30px;
+      filter: invert(1);
+      transition: transform 0.3s ease;
+    }
+    .socials a img:hover {
+      transform: scale(1.2);
+    }
+
+    .links {
+      margin-top: 40px;
+      width: 100%;
+      max-width: 350px;
+    }
+    .link-btn {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      justify-content: flex-start;
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      margin: 15px auto;
+      padding: 14px 20px;
+      border-radius: 18px;
+      backdrop-filter: blur(10px);        /* keeps the glass look */
+      background: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    .link-btn:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: translateY(-3px);
+    }
+    .link-btn img {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+    }
+
+    /* Glass effect footer */
+    footer {
+      margin-top: auto;
+      padding: 20px 0 10px;
+      font-size: 0.8rem;
+      opacity: 0.92;
+      width: 100%;
+      max-width: 420px;
+      border-radius: 16px 16px 0 0;
+      background: rgba(255, 255, 255, 0.14);
+      box-shadow: 0 2px 24px rgba(0,0,0,0.14);
+      backdrop-filter: blur(8px);
+      border-top: 1px solid rgba(255,255,255,0.19);
+      border-right: 1px solid rgba(255,255,255,0.08);
+      border-left: 1px solid rgba(255,255,255,0.08);
+      transition: background 0.2s;
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: 1.3rem; }
+      .link-btn {
+        font-size: 0.95rem;
+        padding: 12px 16px;
+      }
+      footer {
+        font-size: 0.7rem;
+        max-width: 96vw;
+        border-radius: 12px 12px 0 0;
+        padding: 16px 0 8px;
+      }
+      /* Slightly lighter blur on small screens */
+      body::before { filter: blur(40px) saturate(110%); }
+    }
+  </style>
+</head>
+<body>
+  <img src="profile.jpg" alt="Karan Veer Singh" class="profile-pic">
+  <h1>Karan Veer Singh</h1>
+  <p>Life’s a Tragedy in a Close-up, but a Comedy in Long-Shot</p>
+
+  <div class="socials">
+    <a href="https://www.linkedin.com/in/karanveersingh05/" target="_blank"><img src="linkedin.png" alt="LinkedIn"></a>
+    <a href="mailto:karanoman@gmail.com"><img src="email.png" alt="Email"></a>
+    <a href="https://github.com/karanveersingh05" target="_blank"><img src="github.png" alt="GitHub"></a>
+  </div>
+
+  <div class="links">
+    
+    <a class="link-btn" href="https://www.notion.so/Le-Journalisme-Automobile-26ea89d67df1801f86c3dbd684a59faa">
+      <img src="wheel.png" alt="Blog">
+      Automobile Blogs for Fun
+    </a>
+    <a class="link-btn" href="https://github.com/karanveersingh05">
+      <img src="ghr.png" alt="GitHub">
+      GitHub for Work
+    </a>
+     <a class="link-btn" href="https://www.linkedin.com/in/karanveersingh05">
+      <img src="lr.png" alt="linkedin">
+      Lets Connet Professionally 
+    </a>
+     <a class="link-btn" href="https://music.apple.com/profile/karan_singh05">
+      <img src="am.png" alt="applemusic">
+      Music I Vibe To
+    </a>
+     <a class="link-btn" href="https://www.youtube.com/@karan_singh05">
+      <img src="ytr.png" alt="youtube">
+      Inactive but Might Do
+    </a>
+  </div>
+
+  <footer>
+    Made by Me ! ; anyway, do contact me for fun stories
+  </footer>
+</body>
+</html>
