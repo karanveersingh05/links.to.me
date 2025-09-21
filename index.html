@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Karan Veer Singh | Links</title>
   <style>
     * {
@@ -11,40 +11,31 @@
       box-sizing: border-box;
     }
 
-    /* UPDATED: removed bitmap background, added gradient + overlay */
     body {
       font-family: Arial, sans-serif;
-
-      /* Base gradient fallback (no image) */
-      background: linear-gradient(180deg, #0b2f4e 0%, #0f456b 35%, #1a6fa1 100%); /* deep to light blues */
-      /* If you want to keep a note, use CSS comments: */
-      /* background: #1e3c72; */
-
+      background: linear-gradient(180deg, #0b2f4e 0%, #0f456b 35%, #1a6fa1 100%);
       color: white;
       text-align: center;
-      padding: 20px 20px 0;   /* changed from 20px */
-      min-height: 100vh;
+      padding: calc(20px + env(safe-area-inset-top)) 20px 0;
+      min-height: 100dvh;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
-
-      /* Ensure the overlay sits behind content cleanly */
       position: relative;
       isolation: isolate;
     }
 
-    /* NEW: blurred photo overlay using bg.jpg */
     body::before {
       content: "";
       position: fixed;
-      inset: -20vmax; /* extend beyond edges so blur doesn’t clip */
+      inset: -20vmax;
       background-image: url("bg.jpg");
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
-      filter: blur(14px) saturate(110%);  /* softens and enriches color */
-      transform: scale(1.05);             /* hides blur edge */
+      filter: blur(14px) saturate(110%);
+      transform: scale(1.05);
       z-index: -1;
       pointer-events: none;
     }
@@ -101,7 +92,7 @@
       margin: 15px auto;
       padding: 14px 20px;
       border-radius: 18px;
-      backdrop-filter: blur(10px);        /* keeps the glass look */
+      backdrop-filter: blur(10px);
       background: rgba(255, 255, 255, 0.15);
       box-shadow: 0 4px 20px rgba(0,0,0,0.3);
       transition: background 0.3s ease, transform 0.2s ease;
@@ -116,10 +107,9 @@
       border-radius: 50%;
     }
 
-    /* Glass effect footer */
     footer {
       margin-top: auto;
-      padding: 20px 0 10px;
+      padding: 20px 0 calc(10px + env(safe-area-inset-bottom));
       font-size: 0.8rem;
       opacity: 0.92;
       width: 100%;
@@ -146,7 +136,6 @@
         border-radius: 12px 12px 0 0;
         padding: 16px 0 8px;
       }
-      /* Slightly lighter blur on small screens */
       body::before { filter: blur(40px) saturate(110%); }
     }
   </style>
@@ -154,7 +143,7 @@
 <body>
   <img src="profile.jpg" alt="Karan Veer Singh" class="profile-pic">
   <h1>Karan Veer Singh</h1>
-  <p>Life’s a Tragedy in a Close-up, but a Comedy in Long-Shot</p>
+  <p>Life’s a Tragedy in a Close-up, <br> but a Comedy in Long-Shot</p>
 
   <div class="socials">
     <a href="https://www.linkedin.com/in/karanveersingh05/" target="_blank"><img src="linkedin.png" alt="LinkedIn"></a>
@@ -172,15 +161,15 @@
       <img src="ghr.png" alt="GitHub">
       GitHub for Work
     </a>
-     <a class="link-btn" href="https://www.linkedin.com/in/karanveersingh05">
+    <a class="link-btn" href="https://www.linkedin.com/in/karanveersingh05">
       <img src="lr.png" alt="linkedin">
       Lets Connet Professionally 
     </a>
-     <a class="link-btn" href="https://music.apple.com/profile/karan_singh05">
+    <a class="link-btn" href="https://music.apple.com/profile/karan_singh05">
       <img src="am.png" alt="applemusic">
       Music I Vibe To
     </a>
-     <a class="link-btn" href="https://www.youtube.com/@karan_singh05">
+    <a class="link-btn" href="https://www.youtube.com/@karan_singh05">
       <img src="ytr.png" alt="youtube">
       Inactive but Might Do
     </a>
