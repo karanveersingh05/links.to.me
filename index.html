@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0b2f4e">
   <title>Karan Veer Singh | Links</title>
   <style>
+    html { background-color: #0b2f4e; }
+
     * {
       margin: 0;
       padding: 0;
@@ -126,15 +129,12 @@
 
     @media (max-width: 480px) {
       h1 { font-size: 1.3rem; }
-      .link-btn {
-        font-size: 0.95rem;
-        padding: 12px 16px;
-      }
+      .link-btn { font-size: 0.95rem; padding: 12px 16px; }
       footer {
         font-size: 0.7rem;
         max-width: 96vw;
         border-radius: 12px 12px 0 0;
-        padding: 16px 0 8px;
+        padding: 16px 0 calc(8px + env(safe-area-inset-bottom));
       }
       body::before { filter: blur(40px) saturate(110%); }
     }
@@ -152,7 +152,6 @@
   </div>
 
   <div class="links">
-    
     <a class="link-btn" href="https://www.notion.so/Le-Journalisme-Automobile-26ea89d67df1801f86c3dbd684a59faa">
       <img src="wheel.png" alt="Blog">
       Automobile Blogs for Fun
@@ -180,3 +179,4 @@
   </footer>
 </body>
 </html>
+
