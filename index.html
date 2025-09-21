@@ -2,19 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <!-- keeps Safari’s safe-area APIs enabled -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <!-- enables full-screen when added to Home Screen -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="theme-color" content="#0b2f4e">
   <title>Karan Veer Singh | Links</title>
   <style>
-    html { background-color: #0b2f4e; } /* covers any overscroll area */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    /* keep 100vh per the last test; note: Safari bars remain in browser mode */
     body {
       font-family: Arial, sans-serif;
       background: linear-gradient(180deg, #0b2f4e 0%, #0f456b 35%, #1a6fa1 100%);
@@ -45,35 +41,83 @@
     }
 
     .profile-pic {
-      margin-top: 40px; width: 120px; height: 120px;
-      border-radius: 50%; border: 3px solid white; object-fit: cover;
+      margin-top: 40px;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid white;
+      object-fit: cover;
     }
 
-    h1 { margin-top: 15px; font-size: 1.6rem; }
-    p  { margin-top: 8px; font-size: 0.95rem; font-style: italic; opacity: 0.9; }
+    h1 {
+      margin-top: 15px;
+      font-size: 1.6rem;
+    }
+    p {
+      margin-top: 8px;
+      font-size: 0.95rem;
+      font-style: italic;
+      opacity: 0.9;
+    }
 
-    .socials { margin-top: 20px; display: flex; justify-content: center; gap: 20px; }
-    .socials a img { width: 30px; height: 30px; filter: invert(1); transition: transform 0.3s ease; }
-    .socials a img:hover { transform: scale(1.2); }
+    .socials {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    .socials a img {
+      width: 30px;
+      height: 30px;
+      filter: invert(1);
+      transition: transform 0.3s ease;
+    }
+    .socials a img:hover {
+      transform: scale(1.2);
+    }
 
-    .links { margin-top: 40px; width: 100%; max-width: 350px; }
+    .links {
+      margin-top: 40px;
+      width: 100%;
+      max-width: 350px;
+    }
     .link-btn {
-      display: flex; align-items: center; gap: 12px; justify-content: flex-start;
-      text-decoration: none; color: white; font-weight: 500;
-      margin: 15px auto; padding: 14px 20px; border-radius: 18px;
-      backdrop-filter: blur(10px); background: rgba(255,255,255,0.15);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      justify-content: flex-start;
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      margin: 15px auto;
+      padding: 14px 20px;
+      border-radius: 18px;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.15);
       box-shadow: 0 4px 20px rgba(0,0,0,0.3);
       transition: background 0.3s ease, transform 0.2s ease;
     }
-    .link-btn:hover { background: rgba(255,255,255,0.25); transform: translateY(-3px); }
-    .link-btn img { width: 28px; height: 28px; border-radius: 50%; }
+    .link-btn:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: translateY(-3px);
+    }
+    .link-btn img {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+    }
 
     footer {
       margin-top: auto;
       padding: 20px 0 calc(10px + env(safe-area-inset-bottom));
-      font-size: 0.8rem; opacity: 0.92; width: 100%; max-width: 420px;
-      border-radius: 16px 16px 0 0; background: rgba(255,255,255,0.14);
-      box-shadow: 0 2px 24px rgba(0,0,0,0.14); backdrop-filter: blur(8px);
+      font-size: 0.8rem;
+      opacity: 0.92;
+      width: 100%;
+      max-width: 420px;
+      border-radius: 16px 16px 0 0;
+      background: rgba(255, 255, 255, 0.14);
+      box-shadow: 0 2px 24px rgba(0,0,0,0.14);
+      backdrop-filter: blur(8px);
       border-top: 1px solid rgba(255,255,255,0.19);
       border-right: 1px solid rgba(255,255,255,0.08);
       border-left: 1px solid rgba(255,255,255,0.08);
@@ -84,8 +128,10 @@
       h1 { font-size: 1.3rem; }
       .link-btn { font-size: 0.95rem; padding: 12px 16px; }
       footer {
-        font-size: 0.7rem; max-width: 96vw; border-radius: 12px 12px 0 0;
-        padding: 16px 0 calc(8px + env(safe-area-inset-bottom));
+        font-size: 0.7rem;
+        max-width: 96vw;
+        border-radius: 12px 12px 0 0;
+        padding: 16px 0 8px;
       }
       body::before { filter: blur(40px) saturate(110%); }
     }
@@ -104,22 +150,29 @@
 
   <div class="links">
     <a class="link-btn" href="https://www.notion.so/Le-Journalisme-Automobile-26ea89d67df1801f86c3dbd684a59faa">
-      <img src="wheel.png" alt="Blog"> Automobile Blogs for Fun
+      <img src="wheel.png" alt="Blog">
+      Automobile Blogs for Fun
     </a>
     <a class="link-btn" href="https://github.com/karanveersingh05">
-      <img src="ghr.png" alt="GitHub"> GitHub for Work
+      <img src="ghr.png" alt="GitHub">
+      GitHub for Work
     </a>
     <a class="link-btn" href="https://www.linkedin.com/in/karanveersingh05">
-      <img src="lr.png" alt="linkedin"> Lets Connet Professionally
+      <img src="lr.png" alt="linkedin">
+      Lets Connet Professionally 
     </a>
     <a class="link-btn" href="https://music.apple.com/profile/karan_singh05">
-      <img src="am.png" alt="applemusic"> Music I Vibe To
+      <img src="am.png" alt="applemusic">
+      Music I Vibe To
     </a>
     <a class="link-btn" href="https://www.youtube.com/@karan_singh05">
-      <img src="ytr.png" alt="youtube"> Inactive but Might Do
+      <img src="ytr.png" alt="youtube">
+      Inactive but Might Do
     </a>
   </div>
 
-  <footer>Made by Me ! ; anyway, do contact me for fun stories</footer>
+  <footer>
+    Made by Me ! ; anyway, do contact me for fun stories
+  </footer>
 </body>
 </html>
