@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Karan Veer Singh | Links</title>
-  <meta name="p:domain_verify" content="585ab37a419ee3d1756a4c7a51f3f3d6"/>
   <style>
     * {
       margin: 0;
@@ -108,6 +107,35 @@
       border-radius: 50%;
     }
 
+    .dual-links {
+      display: flex;
+      gap: 12px;
+      width: 100%;
+      margin: 15px auto;
+    }
+
+    .link-btn-small {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      padding: 14px 10px;
+      border-radius: 18px;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      transition: background 0.3s ease, transform 0.2s ease;
+      font-size: 0.95rem;
+    }
+
+    .link-btn-small:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: translateY(-3px);
+    }
+
     footer {
       margin-top: auto;
       padding: 20px 0 calc(10px + env(safe-area-inset-bottom));
@@ -122,38 +150,8 @@
       border-top: 1px solid rgba(255,255,255,0.19);
       border-right: 1px solid rgba(255,255,255,0.08);
       border-left: 1px solid rgba(255,255,255,0.08);
-      transition: background 0.2s;
- 
-    }
- 
-    .dual-links {
-      display: flex;
-      gap: 12px; 
-      width: 100%;
-      margin: 15px auto;
-    }
-      
-    .link-btn-small {
-      flex: 1; 
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      color: white;
-      font-weight: 500;
-      padding: 14px 10px; 
-      border-radius: 18px;
-      backdrop-filter: blur(10px);
-      background: rgba(255, 255, 255, 0.15);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-      transition: background 0.3s ease, transform 0.2s ease;
-      font-size: 0.95rem;
     }
 
-    .link-btn-small:hover {
-      background: rgba(255, 255, 255, 0.25);
-      transform: translateY(-3px);
-    }
     @media (max-width: 480px) {
       h1 { font-size: 1.3rem; }
       .link-btn { font-size: 0.95rem; padding: 12px 16px; }
@@ -163,14 +161,13 @@
         border-radius: 12px 12px 0 0;
         padding: 16px 0 8px;
       }
-      body::before { filter: blur(14px) saturate(110%); }
     }
   </style>
 </head>
 <body>
   <img src="profile.jpg" alt="Karan Veer Singh" class="profile-pic">
   <h1>Karan Veer Singh</h1>
-  <p>Life’s a Tragedy in a Close-up, <br> but  Comedy in a Long-Shot <br> -Charlie Chaplin </p>
+  <p>Life’s a Tragedy in a Close-up, <br> but Comedy in a Long-Shot <br> -Charlie Chaplin </p>
 
   <div class="socials">
     <a href="https://www.linkedin.com/in/karanveersingh05/" target="_blank"><img src="linkedin.png" alt="LinkedIn"></a>
@@ -180,45 +177,33 @@
 
   <div class="links">
     <a class="link-btn" href="https://karanveersingh.notion.site/Le-Journalisme-Automobile-26ea89d67df1801f86c3dbd684a59faa">
-      <img src="wheel.png" alt="Blog">
-      Automobile Blogs | For Fun
+      <img src="wheel.png" alt="Blog"> Automobile Blogs | For Fun
     </a>
-       <a class="link-btn" href="https://www.youtube.com/@karan_singh05">
-      <img src="ytr.png" alt="youtube">
-    Youtube | Casual
+    <a class="link-btn" href="https://www.youtube.com/@karan_singh05">
+      <img src="ytr.png" alt="youtube"> Youtube | Casual
     </a>
     <a class="link-btn" href="https://www.linkedin.com/in/karanveersingh05">
-      <img src="lr.png" alt="linkedin">
-      Let's Connect Professionally 
+      <img src="lr.png" alt="linkedin"> Let's Connect Professionally 
     </a>
-     <a class="link-btn" href="https://in.pinterest.com/karan_singh05/">
-      <img src="pinterest.png" alt="pinterest">
-      Photographs | Pinterest
+    <a class="link-btn" href="https://in.pinterest.com/karan_singh05/">
+      <img src="pinterest.png" alt="pinterest"> Photographs | Pinterest
     </a>
     <a class="link-btn" href="https://music.apple.com/profile/karan_singh05">
-      <img src="am.png" alt="applemusic">
-      Music I Vibe To
+      <img src="am.png" alt="applemusic"> Music I Vibe To
     </a>
-       <a class="link-btn" href="https://www.duolingo.com/profile/VeerSingh05">
-      <img src="duor.png" alt="duo">
-      Duolingo Streaks
+    <a class="link-btn" href="https://www.duolingo.com/profile/VeerSingh05">
+      <img src="duor.png" alt="duo"> Duolingo Streaks
     </a>
     <a class="link-btn" href="https://github.com/karanveersingh05">
-      <img src="ghr.png" alt="GitHub">
-      GitHub | Nothing Fancy
+      <img src="ghr.png" alt="GitHub"> GitHub | Nothing Fancy
     </a>
-         <a class="link-btn" href="https://www.instagram.com/dipsy_dog05/">
-      <img src="insta.png" alt="insta">
-      My Dogs | Instagram 
+    <a class="link-btn" href="https://www.instagram.com/dipsy_dog05/">
+      <img src="insta.png" alt="insta"> My Dogs | Instagram 
     </a>
-  </div>
-  <div class="dual-links">
-      <a class="link-btn-small" href="https://www.coursera.org/user/d96f876a12eba07e73ec540ac34394db" target="_blank">
-        Coursera
-      </a>
-      <a class="link-btn-small" href="https://www.udemy.com/user/karan-veer-singh-49/" target="_blank">
-        Udemy
-      </a>
+
+    <div class="dual-links">
+      <a class="link-btn-small" href="https://www.coursera.org/user/d96f876a12eba07e73ec540ac34394db" target="_blank">Coursera</a>
+      <a class="link-btn-small" href="https://www.udemy.com/user/karan-veer-singh-49/" target="_blank">Udemy</a>
     </div>
   </div>
 
@@ -227,12 +212,3 @@
   </footer>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
