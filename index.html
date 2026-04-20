@@ -123,8 +123,37 @@
       border-right: 1px solid rgba(255,255,255,0.08);
       border-left: 1px solid rgba(255,255,255,0.08);
       transition: background 0.2s;
+ 
+    }
+ 
+    .dual-links {
+      display: flex;
+      gap: 12px; 
+      width: 100%;
+      margin: 15px auto;
+    }
+      
+    .link-btn-small {
+      flex: 1; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      padding: 14px 10px; 
+      border-radius: 18px;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      transition: background 0.3s ease, transform 0.2s ease;
+      font-size: 0.95rem;
     }
 
+    .link-btn-small:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: translateY(-3px);
+    }
     @media (max-width: 480px) {
       h1 { font-size: 1.3rem; }
       .link-btn { font-size: 0.95rem; padding: 12px 16px; }
@@ -141,7 +170,7 @@
 <body>
   <img src="profile.jpg" alt="Karan Veer Singh" class="profile-pic">
   <h1>Karan Veer Singh</h1>
-  <p>Life’s a Tragedy in a Close-up, <br> but a Comedy in Long-Shot</p>
+  <p>Life’s a Tragedy in a Close-up, <br> but  Comedy in a Long-Shot <br> -Charlie Chaplin </p>
 
   <div class="socials">
     <a href="https://www.linkedin.com/in/karanveersingh05/" target="_blank"><img src="linkedin.png" alt="LinkedIn"></a>
@@ -160,7 +189,11 @@
     </a>
     <a class="link-btn" href="https://www.linkedin.com/in/karanveersingh05">
       <img src="lr.png" alt="linkedin">
-      Lets Connect Professionally 
+      Let's Connect Professionally 
+    </a>
+     <a class="link-btn" href="https://in.pinterest.com/karan_singh05/">
+      <img src="pinterest.png" alt="pinterest">
+      Photographs | Pinterest
     </a>
     <a class="link-btn" href="https://music.apple.com/profile/karan_singh05">
       <img src="am.png" alt="applemusic">
@@ -178,6 +211,15 @@
       <img src="insta.png" alt="insta">
       My Dogs | Instagram 
     </a>
+  </div>
+  <div class="dual-links">
+      <a class="link-btn-small" href="https://www.coursera.org/user/d96f876a12eba07e73ec540ac34394db" target="_blank">
+        Coursera
+      </a>
+      <a class="link-btn-small" href="https://www.udemy.com/user/karan-veer-singh-49/" target="_blank">
+        Udemy
+      </a>
+    </div>
   </div>
 
   <footer>
