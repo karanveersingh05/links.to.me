@@ -1,306 +1,232 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Karan Veer Singh Sikarwar | Links</title>
-  
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "@id": "https://karanveersingh05.github.io/links.to.me/#person",
-  "name": "Karan Veer Singh Sikarwar",
-  "alternateName": [
-    "Karan Veer Singh",
-    "Karan Veer (Sikarwar) Singh"
-  ],
-  "url": "https://karanveersingh05.github.io/links.to.me/",
-  "sameAs": [
-    "https://www.linkedin.com/in/karanveersingh05",
-    "https://www.instagram.com/karan_singh05/",
-    "https://www.youtube.com/@karan_singh05",
-    "https://karanveersingh.notion.site/Le-Journalisme-Automobile-26ea89d67df1801f86c3dbd684a59faa",
-    "https://in.pinterest.com/karan_singh05/"
-  ]
-}
-</script>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(180deg, #0b2f4e 0%, #0f456b 35%, #1a6fa1 100%);
-      color: white;
-      text-align: center;
-      padding: 0;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      position: relative;
-      isolation: isolate;
-    }
-    body::before {
-      content: "";
-      position: fixed;
-      inset: -20vmax;
-      background-image: url("bg.jpg");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-      filter: blur(14px) saturate(110%);
-      transform: scale(1.05);
-      z-index: -1;
-      pointer-events: none;
-    }
-    .profile-pic {
-      margin-top: 40px;
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      border: 3px solid white;
-      object-fit: cover;
-    }
-    h1 {
-      margin-top: 15px;
-      font-size: 1.7rem;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      color: #ffffff;
-      text-shadow: 0 2px 10px rgba(255, 255, 255, 0.4), 0 0 20px rgba(255, 255, 255, 0.2);
-    }
-    
-    p {
-      margin-top: 8px;
-      font-size: 0.95rem;
-      font-style: italic;
-      opacity: 0.9;
-    }
-    .about-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 18px;
-      padding: 9px 16px;
-      border: 1px solid rgba(255, 255, 255, 0.32);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      color: rgba(255, 255, 255, 0.94);
-      text-decoration: none;
-      font-size: 0.82rem;
-      font-weight: 500;
-      letter-spacing: 0.2px;
-      transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
-    }
-    .about-link:hover {
-      background: rgba(255, 255, 255, 0.16);
-      border-color: rgba(255, 255, 255, 0.55);
-      transform: translateY(-2px);
-    }
-    .about-link svg {
-      width: 14px;
-      height: 14px;
-      opacity: 0.85;
-      transition: transform 0.25s ease;
-    }
-    .about-link:hover svg {
-      transform: translateX(2px);
-    }
-    .about-link:focus-visible {
-      outline: 2px solid white;
-      outline-offset: 4px;
-    }
-    .socials {
-      margin-top: 20px;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
-    .socials a img {
-      width: 30px;
-      height: 30px;
-      filter: invert(1);
-      transition: transform 0.3s ease;
-    }
-    .socials a img:hover {
-      transform: scale(1.2);
-    }
-    .links {
-      margin-top: 40px;
-      width: 100%;
-      max-width: 350px;
-      margin-bottom: 30px;
-    }
-    .link-btn {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      justify-content: flex-start;
-      text-decoration: none;
-      color: white;
-      font-weight: 500;
-      margin: 15px auto;
-      padding: 14px 20px;
-      border-radius: 18px;
-      backdrop-filter: blur(10px);
-      background: rgba(255, 255, 255, 0.15);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-      transition: background 0.3s ease, transform 0.2s ease;
-    }
-    .link-btn:hover {
-      background: rgba(255, 255, 255, 0.25);
-      transform: translateY(-3px);
-    }
-    .link-btn img {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-    }
-    .business-section {
-      margin-top: 35px;
-      padding-top: 15px;
-      border-top: 1px solid rgba(255, 255, 255, 0.15);
-    }
-    .business-title {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin: 0 10px 10px 10px;
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: rgba(255, 255, 255, 0.9);
-      justify-content: flex-start;
-    }
-    .business-title img {
-      width: 84px;
-      height: 84px;
-      object-fit: contain;
-    }
-    .dual-links {
-      display: flex;
-      gap: 12px;
-      width: 100%;
-      margin: 10px auto 15px auto;
-    }
-    .link-btn-small {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      color: white;
-      font-weight: 500;
-      padding: 14px 10px;
-      border-radius: 18px;
-      backdrop-filter: blur(10px);
-      background: rgba(255, 255, 255, 0.15);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-      transition: background 0.3s ease, transform 0.2s ease;
-      font-size: 0.95rem;
-    }
-    .link-btn-small:hover {
-      background: rgba(255, 255, 255, 0.25);
-      transform: translateY(-3px);
-    }
-    footer {
-      margin-top: auto;
-      padding: 20px 0 calc(10px + env(safe-area-inset-bottom));
-      font-size: 0.8rem;
-      opacity: 0.92;
-      width: 100%;
-      max-width: 420px;
-      border-radius: 16px 16px 0 0;
-      background: rgba(255, 255, 255, 0.14);
-      box-shadow: 0 2px 24px rgba(0,0,0,0.14);
-      backdrop-filter: blur(8px);
-      border-top: 1px solid rgba(255,255,255,0.19);
-      border-right: 1px solid rgba(255,255,255,0.08);
-      border-left: 1px solid rgba(255,255,255,0.08);
-    }
-    @media (max-width: 480px) {
-      h1 { font-size: 1.5rem; }
-      .link-btn {
-        font-size: 0.95rem;
-        padding: 12px 16px;
-      }
-      footer {
-        font-size: 0.7rem;
-        max-width: 96vw;
-        border-radius: 12px 12px 0 0;
-        padding: 16px 0 8px;
-      }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .about-link,
-      .about-link svg {
-        transition: none;
-      }
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <title>Karan Veer Singh Sikarwar | Personal Links</title>
+  <meta name="description" content="A little corner of the internet belonging to Karan Veer Singh Sikarwar. Find my work, interests, writing, and other places online.">
+  <meta name="theme-color" content="#171816">
+  <meta name="color-scheme" content="dark">
+  <link rel="canonical" href="https://karanveersingh05.github.io/links.to.me/">
+  <link rel="preload" as="image" href="profile.jpg">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://karanveersingh05.github.io/links.to.me/#person",
+    "name": "Karan Veer Singh Sikarwar",
+    "alternateName": [
+      "Karan Veer Singh",
+      "Karan Veer (Sikarwar) Singh"
+    ],
+    "url": "https://karanveersingh05.github.io/links.to.me/",
+    "sameAs": [
+      "https://www.linkedin.com/in/karanveersingh05",
+      "https://www.instagram.com/karan_singh05/",
+      "https://www.youtube.com/@karan_singh05",
+      "https://karanveersingh.notion.site/Le-Journalisme-Automobile-26ea89d67df1801f86c3dbd684a59faa",
+      "https://in.pinterest.com/karan_singh05/",
+      "https://github.com/karanveersingh05"
+    ]
+  }
+  </script>
 </head>
+
 <body>
-  <img src="profile.jpg" alt="Karan Veer Singh" class="profile-pic">
-  <h1>Karan Veer Singh Sikarwar</h1>
-  <p> CS Engineer | Finance | Automobile </p>
-  <a class="about-link" href="about/" aria-label="Read more about Karan Veer Singh Sikarwar">
-    About Me
-    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-  </a>
-  <div class="socials">
-    <a href="https://www.linkedin.com/in/karanveersingh05/" target="_blank"><img src="linkedin.png" alt="LinkedIn"></a>
-    <a href="mailto:karanoman@zohomail.in"><img src="email.png" alt="Email"></a>
-    <a href="https://github.com/karanveersingh05" target="_blank"><img src="github.png" alt="GitHub"></a>
-  </div>
-  <div class="links">
- 
-    <a class="link-btn" href="https://www.linkedin.com/in/karanveersingh05">
-      <img src="lr.png" alt="linkedin"> LinkedIn | Professional 
-    </a>
-    <a class="link-btn" href="https://www.instagram.com/karan_singh05/">
-      <img src="insta.png" alt="insta"> Instagram | Personal
-    </a>
-    <a class="link-btn" href="https://karanveersingh.notion.site/Le-Journalisme-Automobile-26ea89d67df1801f86c3dbd684a59faa">
-      <img src="wheel.png" alt="Blog"> Automotive Writing | For Fun
-    </a>
-    <a class="link-btn" href="https://in.pinterest.com/karan_singh05/">
-      <img src="pinterest.png" alt="pinterest"> Photography | Pinterest
-    </a>
-    <a class="link-btn" href="https://www.instagram.com/dipsy_dog05/">
-      <img src="insta.png" alt="insta"> My Dogs | Instagram 
-    </a>
-    <a class="link-btn" href="https://www.youtube.com/@karan_singh05">
-      <img src="ytr.png" alt="youtube"> YouTube | Casual
-    </a>
-    <a class="link-btn" href="https://music.apple.com/profile/karan_singh05">
-      <img src="am.png" alt="applemusic"> Music I Vibe To
-    </a>
-    <a class="link-btn" href="https://github.com/karanveersingh05">
-      <img src="ghr.png" alt="GitHub"> GitHub | Nothing Fancy
-    </a>
-    <div class="business-section">
-      <div class="business-title">
-        <img src="vj.png" alt="Vajra Precast Logo">
-        <span>Vajra Precast Industry</span>
+  <div class="page-shell">
+    <header class="profile" data-reveal>
+      <div class="profile-image-wrap">
+        <img
+          class="profile-pic"
+          src="profile.jpg"
+          alt="Portrait of Karan Veer Singh Sikarwar"
+          width="112"
+          height="112"
+          fetchpriority="high"
+        >
+        <span class="profile-indicator" aria-hidden="true"></span>
       </div>
-      
-      <div class="dual-links">
-        <a class="link-btn-small" href="https://vajraprecastindustry.github.io/Vajra-Precast-Industry/">Website</a>
-        <a class="link-btn-small" href="https://maps.app.goo.gl/ETF6zqVRNBmQay8h7?g_st=ic">Google Maps</a>
-      </div>
-    </div>
+
+      <p class="eyebrow"><span></span> A PERSONAL CORNER OF THE INTERNET</p>
+
+      <h1>Karan Veer <span>Singh Sikarwar</span></h1>
+
+      <p class="profile-description">
+        Computer Science · Finance · Automobiles
+      </p>
+
+      <a class="about-link" href="about/" aria-label="Learn more about me">
+        <span class="about-link-copy">
+          <span class="about-link-kicker">A LITTLE MORE CONTEXT</span>
+          <span class="about-link-title">Learn More About Me</span>
+        </span>
+        <span class="about-link-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M5 12h14M13 6l6 6-6 6"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </a>
+
+      <nav class="quick-links" aria-label="Quick contact links">
+        <a href="https://www.linkedin.com/in/karanveersingh05/"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="LinkedIn" title="LinkedIn">
+          <svg aria-hidden="true"><use href="icons.svg#linkedin"/></svg>
+        </a>
+        <a href="mailto:karanoman@zohomail.in"
+           aria-label="Email me" title="Email">
+          <svg aria-hidden="true"><use href="icons.svg#mail"/></svg>
+        </a>
+        <a href="https://github.com/karanveersingh05"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="GitHub" title="GitHub">
+          <svg aria-hidden="true"><use href="icons.svg#github"/></svg>
+        </a>
+      </nav>
+    </header>
+
+    <main class="content">
+      <section class="links-section" aria-labelledby="links-heading">
+        <div class="section-heading" data-reveal>
+          <div>
+            <p class="section-kicker">FIND ME ELSEWHERE</p>
+            <h2 id="links-heading">Around the internet<span>.</span></h2>
+          </div>
+          <span class="section-index" aria-hidden="true">01 / 02</span>
+        </div>
+
+        <div class="link-list">
+          <a class="link-card" href="https://www.linkedin.com/in/karanveersingh05"
+             target="_blank" rel="noopener noreferrer" data-reveal>
+            <span class="link-icon"><svg aria-hidden="true"><use href="icons.svg#linkedin"/></svg></span>
+            <span class="link-copy">
+              <span class="link-title">LinkedIn</span>
+              <span class="link-subtitle">Professional life</span>
+            </span>
+            <svg class="external-arrow" aria-hidden="true"><use href="icons.svg#arrow-up-right"/></svg>
+          </a>
+
+          <a class="link-card" href="https://www.instagram.com/karan_singh05/"
+             target="_blank" rel="noopener noreferrer" data-reveal>
+            <span class="link-icon"><svg aria-hidden="true"><use href="icons.svg#instagram"/></svg></span>
+            <span class="link-copy">
+              <span class="link-title">Instagram</span>
+              <span class="link-subtitle">Life outside the CV</span>
+            </span>
+            <svg class="external-arrow" aria-hidden="true"><use href="icons.svg#arrow-up-right"/></svg>
+          </a>
+
+          <a class="link-card" href="https://karanveersingh.notion.site/Le-Journalisme-Automobile-26ea89d67df1801f86c3dbd684a59faa"
+             target="_blank" rel="noopener noreferrer" data-reveal>
+            <span class="link-icon"><svg aria-hidden="true"><use href="icons.svg#automotive"/></svg></span>
+            <span class="link-copy">
+              <span class="link-title">Automotive Writing</span>
+              <span class="link-subtitle">A journal for the love of cars and bikes</span>
+            </span>
+            <svg class="external-arrow" aria-hidden="true"><use href="icons.svg#arrow-up-right"/></svg>
+          </a>
+
+          <a class="link-card" href="https://in.pinterest.com/karan_singh05/"
+             target="_blank" rel="noopener noreferrer" data-reveal>
+            <span class="link-icon"><svg aria-hidden="true"><use href="icons.svg#pinterest"/></svg></span>
+            <span class="link-copy">
+              <span class="link-title">Pinterest</span>
+              <span class="link-subtitle">Photography and visual inspiration</span>
+            </span>
+            <svg class="external-arrow" aria-hidden="true"><use href="icons.svg#arrow-up-right"/></svg>
+          </a>
+
+          <a class="link-card" href="https://www.instagram.com/dipsy_dog05/"
+             target="_blank" rel="noopener noreferrer" data-reveal>
+            <span class="link-icon"><svg aria-hidden="true"><use href="icons.svg#paw"/></svg></span>
+            <span class="link-copy">
+              <span class="link-title">My Dogs</span>
+              <span class="link-subtitle">Their corner of Instagram</span>
+            </span>
+            <svg class="external-arrow" aria-hidden="true"><use href="icons.svg#arrow-up-right"/></svg>
+          </a>
+
+          <a class="link-card" href="https://www.youtube.com/@karan_singh05"
+             target="_blank" rel="noopener noreferrer" data-reveal>
+            <span class="link-icon"><svg aria-hidden="true"><use href="icons.svg#youtube"/></svg></span>
+            <span class="link-copy">
+              <span class="link-title">YouTube</span>
+              <span class="link-subtitle">Casual uploads and videos</span>
+            </span>
+            <svg class="external-arrow" aria-hidden="true"><use href="icons.svg#arrow-up-right"/></svg>
+          </a>
+
+          <a class="link-card" href="https://music.apple.com/profile/karan_singh05"
+             target="_blank" rel="noopener noreferrer" data-reveal>
+            <span class="link-icon"><svg aria-hidden="true"><use href="icons.svg#music"/></svg></span>
+            <span class="link-copy">
+              <span class="link-title">Apple Music</span>
+              <span class="link-subtitle">The soundtrack, more or less</span>
+            </span>
+            <svg class="external-arrow" aria-hidden="true"><use href="icons.svg#arrow-up-right"/></svg>
+          </a>
+
+          <a class="link-card" href="https://github.com/karanveersingh05"
+             target="_blank" rel="noopener noreferrer" data-reveal>
+            <span class="link-icon"><svg aria-hidden="true"><use href="icons.svg#github"/></svg></span>
+            <span class="link-copy">
+              <span class="link-title">GitHub</span>
+              <span class="link-subtitle">Projects, experiments, and code</span>
+            </span>
+            <svg class="external-arrow" aria-hidden="true"><use href="icons.svg#arrow-up-right"/></svg>
+          </a>
+        </div>
+      </section>
+
+      <section class="business-section" aria-labelledby="business-heading" data-reveal>
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">FAMILY BUSINESS</p>
+            <h2 id="business-heading">Vajra Precast Industry<span>.</span></h2>
+          </div>
+          <span class="section-index" aria-hidden="true">02 / 02</span>
+        </div>
+
+        <p class="business-description">
+          Concrete products and precast solutions.
+        </p>
+
+        <div class="business-actions">
+          <a class="business-link business-link-primary"
+             href="https://vajraprecastindustry.github.io/Vajra-Precast-Industry/"
+             target="_blank" rel="noopener noreferrer">
+            <svg aria-hidden="true"><use href="icons.svg#globe"/></svg>
+            <span>Visit Website</span>
+            <svg class="business-arrow" aria-hidden="true"><use href="icons.svg#arrow-up-right"/></svg>
+          </a>
+
+          <a class="business-link"
+             href="https://maps.app.goo.gl/ETF6zqVRNBmQay8h7?g_st=ic"
+             target="_blank" rel="noopener noreferrer">
+            <svg aria-hidden="true"><use href="icons.svg#map-pin"/></svg>
+            <span>Google Maps</span>
+            <svg class="business-arrow" aria-hidden="true"><use href="icons.svg#arrow-up-right"/></svg>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span class="footer-mark" aria-hidden="true">K.</span>
+      <p>Made with care, by me.</p>
+      <p class="footer-note">Anyway, do contact me for fun stories.</p>
+      <a href="mailto:karanoman@zohomail.in">Say hello <span aria-hidden="true">↗</span></a>
+    </footer>
   </div>
-  <footer>
-    Made by me. Anyway, do contact me for fun stories.
-  </footer>
 </body>
 </html>
