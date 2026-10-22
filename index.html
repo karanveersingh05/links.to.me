@@ -25,14 +25,12 @@
   ]
 }
 </script>
-
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
     body {
       font-family: Arial, sans-serif;
       background: linear-gradient(180deg, #0b2f4e 0%, #0f456b 35%, #1a6fa1 100%);
@@ -47,7 +45,6 @@
       position: relative;
       isolation: isolate;
     }
-
     body::before {
       content: "";
       position: fixed;
@@ -61,7 +58,6 @@
       z-index: -1;
       pointer-events: none;
     }
-
     .profile-pic {
       margin-top: 40px;
       width: 120px;
@@ -70,7 +66,6 @@
       border: 3px solid white;
       object-fit: cover;
     }
-
     h1 {
       margin-top: 15px;
       font-size: 1.7rem;
@@ -86,7 +81,43 @@
       font-style: italic;
       opacity: 0.9;
     }
-
+    .about-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 18px;
+      padding: 9px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.32);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      color: rgba(255, 255, 255, 0.94);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.2px;
+      transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+    }
+    .about-link:hover {
+      background: rgba(255, 255, 255, 0.16);
+      border-color: rgba(255, 255, 255, 0.55);
+      transform: translateY(-2px);
+    }
+    .about-link svg {
+      width: 14px;
+      height: 14px;
+      opacity: 0.85;
+      transition: transform 0.25s ease;
+    }
+    .about-link:hover svg {
+      transform: translateX(2px);
+    }
+    .about-link:focus-visible {
+      outline: 2px solid white;
+      outline-offset: 4px;
+    }
     .socials {
       margin-top: 20px;
       display: flex;
@@ -102,7 +133,6 @@
     .socials a img:hover {
       transform: scale(1.2);
     }
-
     .links {
       margin-top: 40px;
       width: 100%;
@@ -134,13 +164,11 @@
       height: 28px;
       border-radius: 50%;
     }
-
     .business-section {
       margin-top: 35px;
       padding-top: 15px;
       border-top: 1px solid rgba(255, 255, 255, 0.15);
     }
-
     .business-title {
       display: flex;
       align-items: center;
@@ -151,20 +179,17 @@
       color: rgba(255, 255, 255, 0.9);
       justify-content: flex-start;
     }
-
     .business-title img {
       width: 84px;
       height: 84px;
       object-fit: contain;
     }
-
     .dual-links {
       display: flex;
       gap: 12px;
       width: 100%;
       margin: 10px auto 15px auto;
     }
-
     .link-btn-small {
       flex: 1;
       display: flex;
@@ -181,12 +206,10 @@
       transition: background 0.3s ease, transform 0.2s ease;
       font-size: 0.95rem;
     }
-
     .link-btn-small:hover {
       background: rgba(255, 255, 255, 0.25);
       transform: translateY(-3px);
     }
-
     footer {
       margin-top: auto;
       padding: 20px 0 calc(10px + env(safe-area-inset-bottom));
@@ -202,15 +225,23 @@
       border-right: 1px solid rgba(255,255,255,0.08);
       border-left: 1px solid rgba(255,255,255,0.08);
     }
-
     @media (max-width: 480px) {
       h1 { font-size: 1.5rem; }
-      .link-btn { font-size: 0.95rem; padding: 12px 16px; }
+      .link-btn {
+        font-size: 0.95rem;
+        padding: 12px 16px;
+      }
       footer {
         font-size: 0.7rem;
         max-width: 96vw;
         border-radius: 12px 12px 0 0;
         padding: 16px 0 8px;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .about-link,
+      .about-link svg {
+        transition: none;
       }
     }
   </style>
@@ -219,13 +250,17 @@
   <img src="profile.jpg" alt="Karan Veer Singh" class="profile-pic">
   <h1>Karan Veer Singh Sikarwar</h1>
   <p> CS Engineer | Finance | Automobile </p>
-
+  <a class="about-link" href="about/" aria-label="Read more about Karan Veer Singh Sikarwar">
+    About Me
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
   <div class="socials">
     <a href="https://www.linkedin.com/in/karanveersingh05/" target="_blank"><img src="linkedin.png" alt="LinkedIn"></a>
     <a href="mailto:karanoman@zohomail.in"><img src="email.png" alt="Email"></a>
     <a href="https://github.com/karanveersingh05" target="_blank"><img src="github.png" alt="GitHub"></a>
   </div>
-
   <div class="links">
  
     <a class="link-btn" href="https://www.linkedin.com/in/karanveersingh05">
@@ -252,7 +287,6 @@
     <a class="link-btn" href="https://github.com/karanveersingh05">
       <img src="ghr.png" alt="GitHub"> GitHub | Nothing Fancy
     </a>
-
     <div class="business-section">
       <div class="business-title">
         <img src="vj.png" alt="Vajra Precast Logo">
@@ -264,9 +298,7 @@
         <a class="link-btn-small" href="https://maps.app.goo.gl/ETF6zqVRNBmQay8h7?g_st=ic">Google Maps</a>
       </div>
     </div>
-
   </div>
-
   <footer>
     Made by me. Anyway, do contact me for fun stories.
   </footer>
