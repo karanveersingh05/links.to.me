@@ -1,4 +1,3 @@
-
 (() => {
     'use strict';
 
@@ -202,7 +201,8 @@
                     }
 
                     entry.target.classList.add('is-visible');
-                    entry.target.classList.remove('reveal-pending');
+                    // Removing the class below was breaking your CSS transitions, so it has been removed from JS!
+                    // entry.target.classList.remove('reveal-pending'); 
                     observer.unobserve(entry.target);
                 });
             },
