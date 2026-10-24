@@ -820,7 +820,7 @@ figure {
     }
 
     .site-nav a {
-        font-size: 0.7rem;
+        font-size: 0.85rem; /* Increased size by ~20% */
     }
 
     .hero {
@@ -1006,7 +1006,7 @@ figure {
     }
 
     .site-nav a {
-        font-size: 0.65rem;
+        font-size: 0.78rem; /* Increased size by ~20% */
     }
 
     .theme-toggle__label {
@@ -1167,7 +1167,7 @@ body.dark-theme .text-link:hover {
 
 /* The Curiosity Curve */
 .curiosity-curve {
-    --curve-draw-duration: 1150ms;
+    --curve-draw-duration: 2200ms; /* Slowed down from 1150ms */
     margin: 2.8rem 0 2.5rem;
     padding: 1.7rem 0 1.5rem;
     border-top: 1px solid var(--line);
@@ -1288,7 +1288,7 @@ body.dark-theme .text-link:hover {
 .curiosity-curve.is-animated .curiosity-curve__axis {
     stroke-dasharray: 500;
     stroke-dashoffset: 500;
-    transition: stroke-dashoffset 500ms ease-out;
+    transition: stroke-dashoffset 800ms ease-out; /* Slowed down from 500ms */
 }
 
 .curiosity-curve.is-animated .curiosity-curve__line {
@@ -1315,13 +1315,13 @@ body.dark-theme .text-link:hover {
 
 .curiosity-curve.is-animated.is-visible .curiosity-curve__line {
     stroke-dashoffset: 0;
-    transition-delay: 350ms;
+    transition-delay: 600ms; /* Delayed further from 350ms */
 }
 
 .curiosity-curve.is-animated.is-visible .curiosity-curve__endpoint {
     opacity: 1;
     transform: scale(1);
-    transition-delay: 1150ms;
+    transition-delay: 2800ms; /* Pushed back from 1150ms to match the new slow curve rendering time */
 }
 
 @media (max-width: 760px) {
