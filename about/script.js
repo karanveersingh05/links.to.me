@@ -1,3 +1,4 @@
+
 (() => {
     'use strict';
 
@@ -201,8 +202,6 @@
                     }
 
                     entry.target.classList.add('is-visible');
-                    // Removing the class below was breaking your CSS transitions, so it has been removed from JS!
-                    // entry.target.classList.remove('reveal-pending'); 
                     observer.unobserve(entry.target);
                 });
             },
@@ -279,6 +278,38 @@
             if (window.location.hash !== targetId) {
                 window.history.pushState(null, '', targetId);
             }
+        });
+    });
+
+    // Keep the visible section in sync when navigating browser history.
+    window.addEventListener('popstate', () => {
+        const hash = window.location.hash;
+
+        if (!hash) {
+            window.scrollTo({
+                top: 0,
+                behavior: reducedMotion.matches ? 'auto' : 'smooth'
+            });
+            return;
+        }
+
+        let targetId;
+
+        try {
+            targetId = decodeURIComponent(hash.slice(1));
+        } catch {
+            return;
+        }
+
+        const target = document.getElementById(targetId);
+
+        if (!target) {
+            return;
+        }
+
+        target.scrollIntoView({
+            behavior: reducedMotion.matches ? 'auto' : 'smooth',
+            block: 'start'
         });
     });
 })();
