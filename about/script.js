@@ -1,4 +1,3 @@
-
 (() => {
     'use strict';
 
@@ -84,6 +83,47 @@
     };
 
     applyTheme(getPreferredTheme());
+
+    // Fade in the Classic 350 image after it loads and decodes.
+    const roadImage = document.querySelector('.road-image img');
+
+    if (roadImage) {
+        const showRoadImage = () => {
+            roadImage.style.opacity = '1';
+        };
+
+        roadImage.style.transition = reducedMotion.matches
+            ? 'none'
+            : 'opacity 650ms cubic-bezier(0.22, 1, 0.36, 1)';
+
+        if (roadImage.complete) {
+            // A cached image or a completed loading attempt.
+            showRoadImage();
+        } else {
+            roadImage.style.opacity = '0';
+
+            const revealAfterDecode = () => {
+                if (typeof roadImage.decode === 'function') {
+                    roadImage.decode()
+                        .then(showRoadImage)
+                        .catch(showRoadImage);
+
+                    return;
+                }
+
+                showRoadImage();
+            };
+
+            roadImage.addEventListener('load', revealAfterDecode, {
+                once: true
+            });
+
+            // Do not leave the image hidden if loading fails.
+            roadImage.addEventListener('error', showRoadImage, {
+                once: true
+            });
+        }
+    }
 
     if (themeToggle) {
         themeToggle.addEventListener('click', () => {
@@ -281,7 +321,6 @@
         });
     });
 
-    // Keep the visible section in sync when navigating browser history.
     window.addEventListener('popstate', () => {
         const hash = window.location.hash;
 
