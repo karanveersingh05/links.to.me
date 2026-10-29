@@ -1380,3 +1380,25 @@ body.dark-theme .text-link:hover {
         transform: none;
     }
 }
+
+
+@media (max-width: 760px) {
+    .site-nav {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        column-gap: 1rem;
+        row-gap: 0.25rem;
+    }
+}
+
+@media (max-width: 390px) {
+    .site-nav {
+        column-gap: 0.75rem;
+    }
+
+    .site-nav a {
+        font-size: 0.76rem;
+    }
+}
+
+
