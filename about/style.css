@@ -1285,10 +1285,15 @@ body.dark-theme .text-link:hover {
 }
 
 /* Only activate the drawn effect when JavaScript enables it. */
-.curiosity-curve.is-animated .curiosity-curve__axis {
-    stroke-dasharray: 500;
-    stroke-dashoffset: 500;
-    transition: stroke-dashoffset 800ms ease-out; /* Slowed down from 500ms */
+.curiosity-curve.is-animated .curiosity-curve__axis:first-child {
+    stroke-dasharray: 700;
+    stroke-dashoffset: 700;
+    transition: stroke-dashoffset 800ms ease-out;
+}
+
+.curiosity-curve.is-animated .curiosity-curve__axis:not(:first-child) {
+    opacity: 0;
+    transition: opacity 250ms ease-out;
 }
 
 .curiosity-curve.is-animated .curiosity-curve__line {
@@ -1309,8 +1314,13 @@ body.dark-theme .text-link:hover {
         transform 400ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.curiosity-curve.is-animated.is-visible .curiosity-curve__axis {
+.curiosity-curve.is-animated.is-visible .curiosity-curve__axis:first-child {
     stroke-dashoffset: 0;
+}
+
+.curiosity-curve.is-animated.is-visible .curiosity-curve__axis:not(:first-child) {
+    opacity: 1;
+    transition-delay: 750ms;
 }
 
 .curiosity-curve.is-animated.is-visible .curiosity-curve__line {
@@ -1350,10 +1360,15 @@ body.dark-theme .text-link:hover {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .curiosity-curve.is-animated .curiosity-curve__axis,
+    .curiosity-curve.is-animated .curiosity-curve__axis:first-child,
     .curiosity-curve.is-animated .curiosity-curve__line {
         stroke-dasharray: none;
         stroke-dashoffset: 0;
+        transition: none;
+    }
+
+    .curiosity-curve.is-animated .curiosity-curve__axis:not(:first-child) {
+        opacity: 1;
         transition: none;
     }
 
@@ -1369,10 +1384,14 @@ body.dark-theme .text-link:hover {
         break-inside: avoid;
     }
 
-    .curiosity-curve.is-animated .curiosity-curve__axis,
+    .curiosity-curve.is-animated .curiosity-curve__axis:first-child,
     .curiosity-curve.is-animated .curiosity-curve__line {
         stroke-dasharray: none;
         stroke-dashoffset: 0;
+    }
+
+    .curiosity-curve.is-animated .curiosity-curve__axis:not(:first-child) {
+        opacity: 1;
     }
 
     .curiosity-curve.is-animated .curiosity-curve__endpoint {
