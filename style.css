@@ -301,7 +301,6 @@ h1 span {
   line-height: 1.8;
 }
 
-/* Shared iOS 26 Smoked Liquid Glass surface */
 .liquid-glass,
 .liquid-glass-pill {
   position: relative;
@@ -641,54 +640,70 @@ h1 span {
 }
 
 .business-actions {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
 }
 
 .business-link {
   min-width: 0;
-  min-height: 52px;
-  padding: 12px 13px;
-  display: flex;
+  min-height: 44px;
+  padding: 9px 15px;
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
-  border: 1px solid var(--line);
+  gap: 8px;
+  border-radius: 999px;
   color: var(--text);
-  font-size: 0.73rem;
+  font-size: 0.7rem;
   font-weight: 500;
   text-decoration: none;
-  transition: border-color 220ms ease, background 220ms ease, transform 220ms var(--ease);
 }
 
 .business-link:hover {
-  transform: translateY(-2px);
-  border-color: var(--line-accent);
-  background: var(--accent-dim);
+  transform: translateY(-1px);
+  border-color: rgba(198, 167, 122, 0.36);
 }
 
-.business-link>svg:first-child {
-  width: 16px;
-  height: 16px;
-  flex: 0 0 16px;
-  color: var(--accent);
+.business-link:active {
+  transform: scale(0.97);
 }
 
-.business-link>span {
-  min-width: 0;
-  flex: 1;
-}
-
-.business-link__arrow {
+.business-link > svg:first-child {
   width: 14px;
   height: 14px;
   flex: 0 0 14px;
+  color: var(--accent);
+}
+
+.business-link > span {
+  white-space: nowrap;
+}
+
+.business-link__arrow {
+  width: 13px;
+  height: 13px;
+  flex: 0 0 13px;
   color: var(--subtle);
+  transition: color 200ms ease, transform 200ms var(--ease);
+}
+
+.business-link:hover .business-link__arrow {
+  transform: translate(2px, -2px);
+  color: var(--accent);
 }
 
 .business-link--primary {
-  border-color: var(--line-accent);
-  background: var(--accent-dim);
+  border-color: rgba(198, 167, 122, 0.3);
+}
+
+.business-link--primary::before {
+  background: linear-gradient(
+    142deg,
+    rgba(198, 167, 122, 0.16) 0%,
+    rgba(32, 31, 26, 0.48) 52%,
+    rgba(198, 167, 122, 0.1) 100%
+  );
 }
 
 .site-footer {
@@ -1059,12 +1074,12 @@ h1 span {
   }
 
   .business-actions {
-    grid-template-columns: 1fr;
     gap: 9px;
   }
 
   .business-link {
-    min-height: 49px;
+    min-height: 44px;
+    padding: 9px 14px;
   }
 
   .site-footer {

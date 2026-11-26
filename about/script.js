@@ -1,10 +1,15 @@
 (() => {
     'use strict';
 
+    const root = document.documentElement;
     const body = document.body;
     const themeToggle = document.querySelector('.theme-toggle');
     const themeIcon = document.querySelector('.theme-toggle__icon');
     const themeLabel = document.querySelector('.theme-toggle__label');
+    const dockThemeButton = document.querySelector('.about-dock__theme');
+    const dockThemeIcon = document.querySelector('.about-dock__theme-icon');
+    const aboutDock = document.querySelector('.about-dock');
+    const firstStorySection = document.querySelector('#story');
     const progressBar = document.querySelector('.reading-progress__bar');
     const sectionLinks = document.querySelectorAll('.page-rail nav a');
     const yearElement = document.getElementById('current-year');
@@ -50,18 +55,30 @@
     const applyTheme = (theme) => {
         const isDark = theme === 'dark';
 
+        root.classList.toggle('dark-theme', isDark);
         body.classList.toggle('dark-theme', isDark);
+
+        const nextLabel = isDark
+            ? 'Switch to light theme'
+            : 'Switch to dark theme';
+        const nextIcon = isDark ? '☼' : '◐';
 
         if (themeToggle) {
             themeToggle.setAttribute('aria-pressed', String(isDark));
-            themeToggle.setAttribute(
-                'aria-label',
-                isDark ? 'Switch to light theme' : 'Switch to dark theme'
-            );
+            themeToggle.setAttribute('aria-label', nextLabel);
+        }
+
+        if (dockThemeButton) {
+            dockThemeButton.setAttribute('aria-pressed', String(isDark));
+            dockThemeButton.setAttribute('aria-label', nextLabel);
         }
 
         if (themeIcon) {
-            themeIcon.textContent = isDark ? '☼' : '◐';
+            themeIcon.textContent = nextIcon;
+        }
+
+        if (dockThemeIcon) {
+            dockThemeIcon.textContent = nextIcon;
         }
 
         if (themeLabel) {
@@ -84,7 +101,6 @@
 
     applyTheme(getPreferredTheme());
 
-    // Fade in the Classic 350 image after it loads and decodes.
     const roadImage = document.querySelector('.road-image img');
 
     if (roadImage) {
@@ -97,7 +113,6 @@
             : 'opacity 650ms cubic-bezier(0.22, 1, 0.36, 1)';
 
         if (roadImage.complete) {
-            // A cached image or a completed loading attempt.
             showRoadImage();
         } else {
             roadImage.style.opacity = '0';
@@ -118,21 +133,44 @@
                 once: true
             });
 
-            // Do not leave the image hidden if loading fails.
             roadImage.addEventListener('error', showRoadImage, {
                 once: true
             });
         }
     }
 
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-            const nextTheme = body.classList.contains('dark-theme')
-                ? 'light'
-                : 'dark';
+    const handleThemeToggle = () => {
+        const nextTheme = root.classList.contains('dark-theme')
+            ? 'light'
+            : 'dark';
 
-            applyTheme(nextTheme);
-            saveTheme(nextTheme);
+        applyTheme(nextTheme);
+        saveTheme(nextTheme);
+    };
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', handleThemeToggle);
+    }
+
+    if (dockThemeButton) {
+        dockThemeButton.addEventListener('click', handleThemeToggle);
+    }
+
+    if (!reducedMotion.matches && window.matchMedia('(hover: hover)').matches) {
+        document.querySelectorAll('.about-glass').forEach((surface) => {
+            surface.addEventListener('pointermove', (event) => {
+                const rect = surface.getBoundingClientRect();
+                if (!rect.width || !rect.height) return;
+                const x = ((event.clientX - rect.left) / rect.width) * 100;
+                const y = ((event.clientY - rect.top) / rect.height) * 100;
+                surface.style.setProperty('--glass-x', `${x.toFixed(1)}%`);
+                surface.style.setProperty('--glass-y', `${y.toFixed(1)}%`);
+            });
+
+            surface.addEventListener('pointerleave', () => {
+                surface.style.removeProperty('--glass-x');
+                surface.style.removeProperty('--glass-y');
+            });
         });
     }
 
@@ -200,9 +238,31 @@
         });
     };
 
+    let dockVisible = false;
+
+    const updateDockVisibility = () => {
+        if (!aboutDock || !firstStorySection) {
+            return;
+        }
+
+        const shouldShow =
+            window.scrollY > 120 &&
+            firstStorySection.getBoundingClientRect().top <=
+                window.innerHeight * 0.72;
+
+        if (shouldShow === dockVisible) {
+            return;
+        }
+
+        dockVisible = shouldShow;
+        aboutDock.classList.toggle('is-visible', shouldShow);
+        aboutDock.setAttribute('aria-hidden', String(!shouldShow));
+    };
+
     const updateScrollUI = () => {
         updateReadingProgress();
         updateActiveSection();
+        updateDockVisibility();
         scrollTicking = false;
     };
 
@@ -257,7 +317,6 @@
         });
     }
 
-    // Draw the curiosity curve once, when it enters the viewport.
     const curiosityCurve = document.querySelector('#curiosity-curve');
 
     if (

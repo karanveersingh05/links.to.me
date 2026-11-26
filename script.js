@@ -11,7 +11,6 @@ document.documentElement.classList.add("js");
 
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-  // Dynamic specular highlight on smoked liquid-glass surfaces (desktop pointer).
   if (!reducedMotion.matches && window.matchMedia("(hover: hover)").matches) {
     const glassSurfaces = document.querySelectorAll(".liquid-glass, .liquid-glass-pill");
 
@@ -32,7 +31,6 @@ document.documentElement.classList.add("js");
     });
   }
 
-  // Reveal the floating Liquid Glass dock once the visitor scrolls into the directory (around item 04).
   const dock = document.querySelector(".glass-dock");
   const directoryAnchor = document.querySelector(".link-list .index-link:nth-of-type(4)");
 

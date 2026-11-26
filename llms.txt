@@ -1,0 +1,25 @@
+# Karan Veer Singh Sikarwar
+
+> Personal index, biography, engineering showcase, and links for Karan Veer Singh Sikarwar, spanning computer science, finance, economics, and automobiles.
+
+## Core Pages
+- [Personal Index](https://karanveersingh05.github.io/links.to.me/): Primary landing page and directory of profiles, writing, and business links.
+- [About](https://karanveersingh05.github.io/links.to.me/about/): Personal story from Sohar (Oman) to Patna, Kota, and Jaipur, alongside interests in technology, finance, and motorcycling.
+- [Engineering Showcase](https://karanveersingh05.github.io/links.to.me/gitcode/): Selected software, data engineering, security, and machine learning projects.
+
+## Selected Engineering Projects
+- [Cybersecurity Companion](https://karanveersingh05.github.io/cybersecurity-Companion-/): Desktop companion for exploring cybersecurity concepts and practical security awareness.
+- [Mutual Funds Analytics](https://karanveersingh05.github.io/MutualFundsAnalytics/): Finance-focused data analytics project exploring mutual fund information.
+- [All India Village Dataset API](https://karanveersingh05.github.io/All-India-Village-Dataset-API/): Large-scale open data API for India's village-level dataset.
+- [Nifty 100 Fundamental Intelligence](https://karanveersingh05.github.io/Nifty-100-Fundamental-Intelligence/): Data engineering, fundamental analysis, and automated health-scoring platform for Nifty 100 companies.
+- [Media Recommendation System](https://karanveersingh05.github.io/Media-Recemmondation-System/): Machine learning project exploring media recommendation generation.
+
+## Writing, Profiles & Business
+- [Le Journalisme Automobile](https://karanveersingh.notion.site/Le-Journalisme-Automobile-26ea89d67df1801f86c3dbd684a59faa): Automotive writing exploring engineering and machine dynamics.
+- [Vajra Precast Industry](https://vajraprecastindustry.github.io/Vajra-Precast-Industry/): Concrete products and precast solutions business.
+- [LinkedIn](https://www.linkedin.com/in/karanveersingh05/)
+- [GitHub](https://github.com/karanveersingh05)
+- [YouTube](https://www.youtube.com/@karan_singh05)
+- [Instagram](https://www.instagram.com/karan_singh05/)
+- [Pinterest](https://in.pinterest.com/karan_singh05/_created/)
+- Email: karanoman@zohomail.in
