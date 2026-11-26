@@ -1,20 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
   const year = document.getElementById("year");
-  if (year) year.textContent = new Date().getFullYear();
+  if (year) {
+    year.textContent = String(new Date().getFullYear());
+  }
 
-
-  const cards = document.querySelectorAll(".project-card");
+  const rows = document.querySelectorAll(".project-row");
   if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    cards.forEach((card) => {
-      card.classList.add("reveal-ready");
-      card.style.opacity = "0";
-      card.style.transform = "translateY(12px)";
+    rows.forEach((row) => {
+      row.style.opacity = "0";
+      row.style.transform = "translateY(8px)";
     });
 
     const observer = new IntersectionObserver((entries, obs) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.style.transition = "opacity 550ms ease, transform 550ms ease";
+          entry.target.style.transition = "opacity 360ms ease, transform 360ms ease";
           entry.target.style.opacity = "1";
           entry.target.style.transform = "translateY(0)";
           obs.unobserve(entry.target);
@@ -22,6 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }, { threshold: 0.08 });
 
-    cards.forEach((card) => observer.observe(card));
+    rows.forEach((row) => observer.observe(row));
   }
 });
