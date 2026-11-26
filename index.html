@@ -48,7 +48,17 @@
   </script>
 </head>
 
-<body>
+<body id="top">
+  <svg class="glass-filters" width="0" height="0" aria-hidden="true" focusable="false">
+    <defs>
+      <filter id="ios26-refraction" x="-15%" y="-15%" width="130%" height="130%" color-interpolation-filters="sRGB">
+        <feTurbulence type="fractalNoise" baseFrequency="0.009 0.013" numOctaves="2" seed="17" result="noise"/>
+        <feGaussianBlur in="noise" stdDeviation="2.4" result="smoothNoise"/>
+        <feDisplacementMap in="SourceGraphic" in2="smoothNoise" scale="14" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+    </defs>
+  </svg>
+
   <a class="skip-link" href="#directory">Skip to directory</a>
 
   <div class="page-shell">
@@ -83,7 +93,7 @@
         <h1 id="profile-name">Karan Veer <span>Singh Sikarwar.</span></h1>
         <p class="profile-description">Computer Science <span aria-hidden="true">·</span> Finance <span aria-hidden="true">·</span> Automobiles</p>
 
-        <a class="about-link" href="about/" aria-label="Learn more about me">
+        <a class="about-link liquid-glass" href="about/" aria-label="Learn more about me">
           <span class="about-link__copy">
             <span class="about-link__kicker">A LITTLE MORE CONTEXT</span>
             <span class="about-link__title">Learn More About Me</span>
@@ -96,7 +106,7 @@
         </a>
 
         <div class="identity-bottom">
-          <nav class="quick-links" aria-label="Quick contact links">
+          <nav class="quick-links liquid-glass-pill" aria-label="Quick contact links">
             <a href="https://www.linkedin.com/in/karanveersingh05/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
               <svg aria-hidden="true"><use href="icons.svg#linkedin"></use></svg>
             </a>
@@ -233,5 +243,35 @@
       <span class="footer-colophon">KARAN VEER SINGH SIKARWAR&nbsp; / &nbsp;<span id="current-year">2026</span></span>
     </footer>
   </div>
+
+  <nav class="glass-dock liquid-glass" aria-label="Quick mobile navigation" aria-hidden="true">
+    <a class="glass-dock__item" href="about/">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="8" r="3.5"/>
+        <path d="M5.5 19.5c1.3-3 3.7-4.5 6.5-4.5s5.2 1.5 6.5 4.5"/>
+      </svg>
+      <span>About</span>
+    </a>
+    <a class="glass-dock__item" href="gitcode/">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="m8 8-4 4 4 4M16 8l4 4-4 4M13.5 6l-3 12"/>
+      </svg>
+      <span>Builds</span>
+    </a>
+    <a class="glass-dock__item" href="https://karanveersingh.notion.site/Le-Journalisme-Automobile-26ea89d67df1801f86c3dbd684a59faa" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 19.5H5.5a2 2 0 0 1-2-2V6.5a2 2 0 0 1 2-2H13.5L18 9v3.5"/>
+        <path d="M13.5 4.5V9H18"/>
+        <path d="m14.5 19.2 4.3-4.3a1.4 1.4 0 0 1 2 2l-4.3 4.3-2.5.5.5-2.5Z"/>
+      </svg>
+      <span>Blog</span>
+    </a>
+    <a class="glass-dock__item glass-dock__item--top" href="#top" aria-label="Back to top">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 18.5V6M6.5 11.5 12 6l5.5 5.5"/>
+      </svg>
+      <span>Top</span>
+    </a>
+  </nav>
 </body>
 </html>

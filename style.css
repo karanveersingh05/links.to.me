@@ -74,6 +74,14 @@ svg {
   stroke-width: 1.6;
 }
 
+.glass-filters {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
 .skip-link {
   position: fixed;
   top: 12px;
@@ -168,6 +176,22 @@ svg {
   padding: 5px 0 0;
 }
 
+.identity-panel::before {
+  position: absolute;
+  top: 190px;
+  left: -42px;
+  width: min(430px, 115%);
+  height: 300px;
+  z-index: -2;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 36% 42%, rgba(198, 167, 122, 0.11) 0%, rgba(198, 167, 122, 0.03) 44%, transparent 72%),
+    radial-gradient(circle at 72% 68%, rgba(243, 240, 232, 0.045) 0%, transparent 62%);
+  filter: blur(24px);
+  content: "";
+  pointer-events: none;
+}
+
 .identity-topline {
   display: flex;
   flex-wrap: wrap;
@@ -230,13 +254,19 @@ svg {
   position: absolute;
   right: -13px;
   bottom: -6px;
-  width: 27px;
-  height: 27px;
+  width: 29px;
+  height: 29px;
   display: grid;
   place-items: center;
-  border: 1px solid var(--line-accent);
+  border: 1px solid rgba(198, 167, 122, 0.45);
   border-radius: 50%;
-  background: var(--bg);
+  background: linear-gradient(145deg, rgba(243, 240, 232, 0.14), rgba(23, 24, 22, 0.52));
+  -webkit-backdrop-filter: blur(10px) saturate(190%) brightness(1.12);
+  backdrop-filter: blur(10px) saturate(190%) brightness(1.12);
+  box-shadow:
+    inset 1px 1px 1.5px rgba(243, 240, 232, 0.36),
+    inset -1px -1px 2px rgba(0, 0, 0, 0.55),
+    0 6px 16px rgba(0, 0, 0, 0.45);
   color: var(--accent);
   font-family: var(--serif);
   font-size: 0.85rem;
@@ -271,23 +301,82 @@ h1 span {
   line-height: 1.8;
 }
 
+/* Shared iOS 26 Smoked Liquid Glass surface */
+.liquid-glass,
+.liquid-glass-pill {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid rgba(243, 240, 232, 0.15);
+  box-shadow:
+    inset 0 1px 1px rgba(243, 240, 232, 0.28),
+    inset 1px 0 1px rgba(198, 167, 122, 0.14),
+    inset 0 -2px 6px rgba(0, 0, 0, 0.48),
+    0 0 0 1px rgba(0, 0, 0, 0.42),
+    0 16px 36px -14px rgba(0, 0, 0, 0.72);
+  transition:
+    border-color 240ms var(--ease),
+    box-shadow 240ms var(--ease),
+    transform 200ms var(--ease);
+}
+
+.liquid-glass::before,
+.liquid-glass-pill::before {
+  position: absolute;
+  inset: -12px;
+  z-index: -2;
+  background: linear-gradient(142deg,
+      rgba(243, 240, 232, 0.085) 0%,
+      rgba(28, 29, 26, 0.46) 46%,
+      rgba(198, 167, 122, 0.075) 100%);
+  -webkit-backdrop-filter: blur(18px) saturate(185%) brightness(1.08);
+  backdrop-filter: blur(18px) saturate(185%) brightness(1.08);
+  backdrop-filter: blur(16px) saturate(185%) brightness(1.08) url(#ios26-refraction);
+  content: "";
+  pointer-events: none;
+}
+
+.liquid-glass::after,
+.liquid-glass-pill::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background:
+    radial-gradient(170px circle at var(--glass-x, 22%) var(--glass-y, 0%),
+      rgba(243, 240, 232, 0.17) 0%,
+      rgba(198, 167, 122, 0.065) 36%,
+      transparent 72%);
+  content: "";
+  pointer-events: none;
+  transition: opacity 220ms ease;
+}
+
 .about-link {
   width: min(100%, 390px);
   min-height: 72px;
   margin-top: 38px;
-  padding: 14px 0;
+  padding: 15px 18px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 18px;
-  border-top: 1px solid var(--line-accent);
-  border-bottom: 1px solid var(--line);
+  border-radius: 20px;
   text-decoration: none;
-  transition: border-color 240ms ease;
 }
 
 .about-link:hover {
-  border-bottom-color: var(--line-accent);
+  border-color: rgba(198, 167, 122, 0.42);
+  box-shadow:
+    inset 0 1px 1.5px rgba(243, 240, 232, 0.36),
+    inset 1px 0 1.5px rgba(198, 167, 122, 0.24),
+    inset 0 -2px 6px rgba(0, 0, 0, 0.48),
+    0 0 0 1px rgba(0, 0, 0, 0.48),
+    0 20px 42px -14px rgba(0, 0, 0, 0.8);
+}
+
+.about-link:active {
+  transform: scale(0.985);
 }
 
 .about-link__copy {
@@ -311,13 +400,15 @@ h1 span {
 }
 
 .about-link__arrow {
-  width: 34px;
-  height: 34px;
-  flex: 0 0 34px;
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
   display: grid;
   place-items: center;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(243, 240, 232, 0.16);
   border-radius: 50%;
+  background: rgba(243, 240, 232, 0.04);
+  box-shadow: inset 0 1px 0 rgba(243, 240, 232, 0.18);
   color: var(--accent);
   transition: transform 240ms var(--ease), border-color 240ms ease, background 240ms ease;
 }
@@ -334,31 +425,49 @@ h1 span {
 }
 
 .identity-bottom {
-  margin-top: 34px;
+  margin-top: 28px;
 }
 
 .quick-links {
-  display: flex;
+  width: fit-content;
+  padding: 4px;
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 4px;
+  border-radius: 999px;
 }
 
 .quick-links a {
-  width: 39px;
-  height: 39px;
+  width: 44px;
+  height: 44px;
   display: grid;
   place-items: center;
-  border: 1px solid var(--line-soft);
+  border: 1px solid transparent;
   border-radius: 50%;
   color: var(--muted);
-  transition: color 200ms ease, border-color 200ms ease, background 200ms ease, transform 200ms var(--ease);
+  transition:
+    color 200ms ease,
+    border-color 200ms ease,
+    background 200ms ease,
+    box-shadow 200ms ease,
+    transform 180ms var(--ease);
 }
 
 .quick-links a:hover {
-  transform: translateY(-2px);
-  border-color: var(--line-accent);
-  background: var(--accent-dim);
+  transform: translateY(-1px);
+  border-color: rgba(198, 167, 122, 0.34);
+  background: rgba(198, 167, 122, 0.14);
+  box-shadow: inset 0 1px 0 rgba(243, 240, 232, 0.22);
   color: var(--accent);
+}
+
+.quick-links a:active {
+  transform: scale(0.95);
+}
+
+.quick-links a:focus-visible,
+.glass-dock__item:focus-visible {
+  outline-offset: -3px;
 }
 
 .quick-links svg {
@@ -406,7 +515,7 @@ h1 span {
   line-height: 1.08;
 }
 
-.section-heading h2 > span {
+.section-heading h2>span {
   color: var(--accent);
 }
 
@@ -558,14 +667,14 @@ h1 span {
   background: var(--accent-dim);
 }
 
-.business-link > svg:first-child {
+.business-link>svg:first-child {
   width: 16px;
   height: 16px;
   flex: 0 0 16px;
   color: var(--accent);
 }
 
-.business-link > span {
+.business-link>span {
   min-width: 0;
   flex: 1;
 }
@@ -669,6 +778,10 @@ h1 span {
   }
 }
 
+.glass-dock {
+  display: none;
+}
+
 @media (min-width: 1100px) {
   .identity-panel {
     padding-right: 8px;
@@ -741,6 +854,91 @@ h1 span {
 
   .site-footer {
     min-height: 112px;
+    padding-bottom: max(98px, calc(78px + env(safe-area-inset-bottom)));
+  }
+}
+
+@media (max-width: 1024px) {
+  .glass-dock {
+    position: fixed;
+    bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+    left: 50%;
+    z-index: 30;
+    width: 332px;
+    max-width: calc(100% - 28px);
+    padding: 5px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: center;
+    gap: 3px;
+    border-radius: 36px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    will-change: transform, opacity;
+    transform: translate3d(-50%, 10px, 0) scale(0.96);
+    transition:
+      opacity 180ms ease-in,
+      transform 180ms ease-in,
+      visibility 0s linear 180ms;
+  }
+
+  .glass-dock.is-visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translate3d(-50%, 0, 0) scale(1);
+    transition:
+      opacity 170ms var(--ease),
+      transform 170ms var(--ease),
+      visibility 0s linear 0s;
+  }
+
+  .glass-dock__item {
+    min-height: 46px;
+    padding: 5px 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    border-radius: 28px;
+    color: var(--muted);
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    transition:
+      background 180ms ease,
+      color 180ms ease,
+      box-shadow 180ms ease,
+      transform 160ms var(--ease);
+  }
+
+  .glass-dock__item svg {
+    width: 16px;
+    height: 16px;
+    flex: 0 0 16px;
+  }
+
+  .glass-dock__item span {
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .glass-dock__item:hover,
+  .glass-dock__item:focus-visible {
+    background: rgba(243, 240, 232, 0.08);
+    box-shadow: inset 0 1px 0 rgba(243, 240, 232, 0.16);
+    color: var(--text);
+  }
+
+  .glass-dock__item--top {
+    color: var(--accent);
+  }
+
+  .glass-dock__item:active {
+    transform: scale(0.95);
   }
 }
 
@@ -818,8 +1016,8 @@ h1 span {
   }
 
   .quick-links a {
-    width: 37px;
-    height: 37px;
+    width: 44px;
+    height: 44px;
   }
 
   .section-heading {
@@ -910,6 +1108,7 @@ h1 span {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
